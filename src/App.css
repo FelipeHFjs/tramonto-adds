@@ -3,14 +3,29 @@
   display: grid;
   place-items: center;
   place-content: center;
-  gap: 2.2rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2.2rem 1.5rem;
   box-sizing: border-box;
+}
+
+.content {
+  width: min(1540px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 400px);
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.copy {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
 }
 
 .hero {
   position: relative;
-  width: min(960px, 100%);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
   padding: 4.2rem 2.6rem;
   border: 1px solid color-mix(in srgb, var(--terra-700) 28%, var(--linen));
   background:
@@ -57,19 +72,21 @@ h1 {
 .tramonto {
   display: block;
   font-family: "GFS Didot", serif;
-  font-size: clamp(4rem, 9vw, 7.2rem);
-  line-height: 0.92;
+  font-size: clamp(3.3rem, 6.8vw, 6rem);
+  line-height: 0.96;
   letter-spacing: 0.02em;
   color: var(--terra-700);
+  max-width: 100%;
 }
 
 .rest {
   display: block;
-  font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+  font-size: clamp(1rem, 1.65vw, 1.55rem);
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   font-weight: 500;
   color: color-mix(in srgb, var(--terra-700) 78%, var(--olive-500));
+  max-width: 100%;
 }
 
 .date {
@@ -81,7 +98,9 @@ h1 {
 }
 
 .note {
-  width: min(820px, 100%);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
   padding-inline: 0.5rem;
 }
 
@@ -93,22 +112,38 @@ h1 {
   color: color-mix(in srgb, var(--terra-700) 72%, var(--olive-500));
 }
 
+.visual {
+  width: 100%;
+  min-width: 0;
+  justify-self: end;
+  display: grid;
+  place-items: center;
+}
+
+.visual-image {
+  width: min(92%, 420px);
+  max-height: min(74vh, 760px);
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--terra-700) 24%, transparent);
+  border: 1px solid color-mix(in srgb, var(--terra-700) 24%, var(--linen));
+}
+
 @media (min-width: 1366px) {
-  .home {
-    gap: 2.6rem;
+  .content {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 460px);
   }
 
   .hero {
-    width: min(1100px, 100%);
     padding: 4.8rem 3.2rem;
   }
 
   .tramonto {
-    font-size: clamp(4.6rem, 8vw, 8.6rem);
+    font-size: clamp(3.8rem, 6.2vw, 7rem);
   }
 
   .rest {
-    font-size: clamp(1.35rem, 1.9vw, 2.2rem);
+    font-size: clamp(1.1rem, 1.45vw, 1.75rem);
   }
 
   .date {
@@ -117,13 +152,13 @@ h1 {
 }
 
 @media (min-width: 1920px) {
-  .home {
-    gap: 2.9rem;
-    padding: 5.6rem 2.4rem;
+  .content {
+    width: min(1740px, 100%);
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 520px);
+    gap: clamp(2rem, 3.2vw, 4rem);
   }
 
   .hero {
-    width: min(1220px, 100%);
     padding: 5.5rem 3.9rem;
   }
 
@@ -133,19 +168,15 @@ h1 {
   }
 
   .tramonto {
-    font-size: clamp(5rem, 7vw, 9rem);
+    font-size: clamp(4.2rem, 5.8vw, 7.8rem);
   }
 
   .rest {
-    font-size: clamp(1.45rem, 1.8vw, 2.4rem);
+    font-size: clamp(1.18rem, 1.35vw, 1.9rem);
   }
 
   .date {
     font-size: clamp(1.6rem, 1.9vw, 2.7rem);
-  }
-
-  .note {
-    width: min(980px, 100%);
   }
 
   .note p {
@@ -154,13 +185,12 @@ h1 {
 }
 
 @media (min-width: 2560px) {
-  .home {
-    gap: 3.3rem;
-    padding: 6.6rem 2.8rem;
+  .content {
+    width: min(2120px, 100%);
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 640px);
   }
 
   .hero {
-    width: min(1360px, 100%);
     padding: 6.2rem 4.6rem;
   }
 
@@ -169,19 +199,15 @@ h1 {
   }
 
   .tramonto {
-    font-size: clamp(5.6rem, 6vw, 10.4rem);
+    font-size: clamp(4.8rem, 5.2vw, 8.8rem);
   }
 
   .rest {
-    font-size: clamp(1.6rem, 1.6vw, 2.7rem);
+    font-size: clamp(1.28rem, 1.2vw, 2rem);
   }
 
   .date {
     font-size: clamp(1.85rem, 1.7vw, 3rem);
-  }
-
-  .note {
-    width: min(1120px, 100%);
   }
 
   .note p {
@@ -189,11 +215,25 @@ h1 {
   }
 }
 
+@media (max-width: 1100px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    justify-self: center;
+    width: min(560px, 100%);
+  }
+}
+
 @media (max-width: 640px) {
   .home {
     padding: 2.6rem 1rem;
-    gap: 1.2rem;
     min-height: 100%;
+  }
+
+  .copy {
+    gap: 1rem;
   }
 
   .hero {
