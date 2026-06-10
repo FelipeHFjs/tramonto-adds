@@ -49,6 +49,26 @@
   box-sizing: border-box;
 }
 
+@media (min-width: 1920px) {
+  :root {
+    font-size: 20px;
+  }
+
+  #root {
+    width: 1560px;
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    font-size: 22px;
+  }
+
+  #root {
+    width: 1880px;
+  }
+}
+
 body {
   margin: 0;
 }
