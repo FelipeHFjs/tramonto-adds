@@ -1,0 +1,113 @@
+.home {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.hero {
+  position: relative;
+  width: min(760px, 100%);
+  padding: 3.5rem 2rem;
+  border: 1px solid color-mix(in srgb, var(--terra-700) 28%, var(--linen));
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(in srgb, var(--terra-300) 72%, transparent),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      color-mix(in srgb, var(--olive-300) 70%, transparent),
+      transparent 50%
+    ),
+    linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--white) 96%, transparent),
+      var(--linen)
+    );
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--terra-700) 22%, transparent);
+}
+
+.kicker,
+.rest,
+.date,
+.note p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--olive-500);
+}
+
+h1 {
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tramonto {
+  display: block;
+  font-family: "GFS Didot", serif;
+  font-size: clamp(3.2rem, 10vw, 6.2rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  color: var(--terra-700);
+}
+
+.rest {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--terra-700) 78%, var(--olive-500));
+}
+
+.date {
+  margin: 1.8rem 0 0;
+  font-size: clamp(1.1rem, 3.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--terra-500);
+}
+
+.note {
+  width: min(640px, 100%);
+  padding-inline: 0.5rem;
+}
+
+.note p {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--terra-700) 72%, var(--olive-500));
+}
+
+@media (max-width: 640px) {
+  .home {
+    padding: 2.6rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .hero {
+    padding: 2.2rem 1.2rem;
+  }
+
+  .kicker {
+    letter-spacing: 0.24em;
+  }
+
+  .rest,
+  .date {
+    letter-spacing: 0.1em;
+  }
+}
