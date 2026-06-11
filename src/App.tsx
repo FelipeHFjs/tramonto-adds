@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import sourCandyImage from "./assets/IMG_8676.jpg";
-import promoImageOne from "./assets/PHOTO-2026-06-10-17-55-15.jpg";
-// import promoImageTwo from "./assets/PHOTO-2026-06-05-18-24-17 2.jpg";
+import sourCandyImage from "./assets/SourCandy.jpg";
+import bananaBreadImage from "./assets/BananaBread.jpg";
+import carameMacchiatoImage from "./assets/CaramelMacchiato.jpg";
 
 const images = [
   {
@@ -10,13 +10,13 @@ const images = [
     alt: "Tramonto Sour Candy Energy",
   },
   {
-    src: promoImageOne,
+    src: bananaBreadImage,
     alt: "Tramonto Banana Bread Latte",
   },
-  // {
-  //   src: promoImageTwo,
-  //   alt: "Imagen promocional de Tramonto",
-  // },
+  {
+    src: carameMacchiatoImage,
+    alt: "Tramonto Caramel Macchiato",
+  },
 ];
 
 function App() {
